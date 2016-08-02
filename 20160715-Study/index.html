@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	.box{
+		width: 100px;
+		height: 100px;
+		background: #000;
+		color: #fff;
+		transition: all 2s ease-in;
+		/* 모션을 주는것이기때문에 전환되어야할 요소에 설정
+		   all을 주게되면 전체적인 효과를 주고자할때.*/
+	}
+
+	.box:hover {
+		background: red;
+		color: green;
+		transform: rotate(180deg) scale(3) translate(10px, 0);
+	}
+
+
+</style>
+<body>
+	<div class="box">font-color</div>
+</body>
+</html>
