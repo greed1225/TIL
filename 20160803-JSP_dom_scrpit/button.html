@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta charset="UTF-8">
+    <title>button Javascript 제어하기</title>
+    <style>
+    #button-group {
+        positon: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    /*자바스크립트는 늘 왼쪽부터 계산*/
+    
+    #button-group button {
+        border: none;
+        padding: 1em;
+        background: #000;
+        color: #fff;
+    }
+    #button
+    </style>
+</head>
+
+<body>
+    <div class="group" role="group">
+        <button type="button">#f50054</button>
+        <button type="button">#8800f3</button>
+        <button type="button">#139df3</button>
+        <button type="button">#20f97d</button>
+        <button type="button">#f2ce09</button>
+    </div>
+    <script>
+    var btn_group = document.getElementById('button-group');
+    console.log(btn_group)
+    </script>
+</body>
+
+</html>

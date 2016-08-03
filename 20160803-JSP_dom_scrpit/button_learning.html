@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSP-button-learning</title>
+</head>
+<body>
+	<button type="button">BLUE</button>
+	<button type="button">PINK</button>
+<script>
+	var body = document.body // 변수에 body 라는 (body) 텍스트 요소를 지정해주고
+		var btn = document.getElementsByTagName('button'); // document내에서 button 속성을 가진 함수명을 찾아주어라.
+		//BTN 변수명을 도큐먼트 내 함수 getElementsByTagName 
+		//(엘리먼트 내부에 전체요소들 중 타입이 button인것을 찾아내어라! ) 
+    var btn_blue = btn.item(0) // 버튼을 구분해주고, btn의 요소의 순서 중 첫번째것을 찾아달라.
+    var btn_pink = btn.item(1) // 버튼을 구분해주고, btn의 요소의 순서 중 두번째것을 찾아달라.
+    btn_blue.onclick = function() { // 온클릭이벤트가 발생되면 동적 함수가 실행되고
+    	body.style.backgroundColor = 'blue'; // 바디 내 바탕색 자체가 블루컬러로 전환되게 실행하라.
+    }
+    btn_pink.onclick = function() { // 온클릭 이벤트가 발생하면 두번째 동적 함수가 실행되면서 
+    	body.style.backgroundColor = 'pink'; // 바디 내 바탕색이 핑크 컬러로 전환되게 실행하라.
+    }
+</script>
+</body>
+</html>
