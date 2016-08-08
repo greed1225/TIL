@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+ 	<div id="parent">
+		<div class="child">
+		<h1>nodeType이란?</h1>
+			<p>nodeType - 노드의 타입 변환</p>
+			<p>nodeName - 요소의 이름을 문자로(대문자)로 변환한다.</p>
+			<p>nodeValue - Text 노드에서만 접근가능한.. ELEMENT_NODE는 null 값을 반환하는 것.</p>
+		</div>
+		<div class="child">
+		<h2>nodeType</h2>
+			<p>ELEMENT_NODE=1</p>
+			<p>TEXT_NODE=3</p>
+			<p>COMMENT_NODE=8</p>
+		</div>
+		</div>
+		<div class="child">
+			<h2>요소를 탐색할 때 고려할 수 있는 DOM API (단! IE 9 이상에서만 작동)</<h2>	</h2>
+				<p>노드.firstElementChild : 자식중에서 첫번째 요소 노드를 반환</	
+				<p>노드.lastElementChild : 자식중에서 마지막 요소 노드를 반환</<p>	</p>
+				<p>노드.previousElementSibling : 노드의 이전 위치에 자리한 형제 요소 노드 반환</	>
+				<p>노드.nextElementSibling : 노드의 다음 위치에 자리한 형제 요소 노드 반환</p>
+				<p>노드.parentElement : 노드의 부모 요소 노드 반환</p>
+		</div>
+	<script>
+		// var parent_el =  document.getElementById('parent');
+		// var parent_el_child_nodes = parent_el.childNodes;
+	</script>
+</body>
+</html>
