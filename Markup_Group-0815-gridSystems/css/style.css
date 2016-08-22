@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+
+/* 기본 컨테이너 너비*/
+.container {
+	width: 100%;
+	margin: 0 auto;
+	background: #4d4b4a;
+}
+
+.headerWrap {
+	font-size: 16px;
+	height: 120px;
+	width: 940px;
+	margin: 0 auto;
+	background: #4d4b4a;
+	text-align: center;
+	position: relative;
+}
+
+.title {
+	top: 48px;
+	position: absolute;
+	float: left;
+}
+
+.mainNav {
+	top: 48px;
+	position: relative;
+	float: right;
+}
+
+ul>li {
+	float: right;
+	padding-left: 20px;
+	color: #ffffff;
+}
+
+.topSliders {
+	top: 120px;
+	width: 100%;
+	height: 408px;
+	background: #f8d2c5;
+}
+
+.topSliders {
+	top: 150px;
+	height: 408px;
+	line-height: 408px; 
+	text-align: center;
+	z-index: 999;
+}
+
+[class*="images-article"] {
+width: 300px;
+height: 216px;
+}
+
+.h2-size {
+	font-size: 25px;
+	text-align: center;
+}
