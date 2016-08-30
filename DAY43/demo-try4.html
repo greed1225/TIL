@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko-KR" data-ng-app> 
+<!-- ng-app 만 적으면 비표준, 앞에 data 접두사를 붙줌으로써 표준화 해준다 -->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Angular</title>
+	<!-- angularJS CDN 출력 -->
+	<style>
+	pre {
+		padding: 1rem;
+		background: #ececec;
+		border-radius: 4px;
+	}
+	table {
+		width: 100%;
+		border: 1px solid #c8c8c8;
+		background: #f6f6f6;
+	}
+	table img {
+		width: 100%;
+	}
+	</style>
+	<!-- 디렉티브를 통하여 컨트롤러와 뷰단을 연결 -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="js/demo-try-4.js"></script>
+</head>
+<body data-ng-init="
+order_reverse = true; 
+people = [
+  {
+    'name'    : 'tomy',
+    'age'     : 23,
+    'mail'    : 'tomy@study.com',
+    'birthday': '2001-09-02',
+    'has-money': 5300,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/34c0ff/fff/?text=tomy'
+    }
+  },
+  {
+    'name'    : 'sunny',
+    'age'     : 32,
+    'mail'    : 'SUNNY@STUDY.COM',
+    'birthday': '1982-02-17',
+    'has-money': 10200,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/7045cf/fff/?text=sunny'
+    }
+  },
+  {
+    'name'    : 'zeus',
+    'age'     : 61,
+    'mail'    : 'zeus@study.com',
+    'birthday': '1990-01-01',
+    'has-money': 1000000,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/3a0099/fff/?text=zeus'
+    }
+  },
+  {
+    'name'    : 'Aron',
+    'age'     : 18,
+    'mail'    : 'aron@study.com',
+    'birthday': '1998-11-21',
+    'has-money': 121900,
+    'picture' : {
+      'width': 200,
+      'height': 200,
+      'src': 'http://placehold.it/220x220/3a0099/fff/?text=aron'
+    }
+  }
+];
+limit_count = people.length;
+">
+
+
+
+<!-- <ul data-ng-repeat="person in people">  --><!-- 1. people내에 person을 출력하라. 2. (reapat:반복) person을 이용하여 반복문을 출력하라!   -->
+<!-- 	<div>{{ person.name }}</div>
+	<div>{{ person.age }}</div>
+	<div>{{ person.mail }}</div>
+	<div><img data-ng-src="{{person.picture}}"></div>
+	<div>person['has-money'] | currency"></div> -->
+
+	<button type="button" data-ng-click="order_reverse =  !order_reverse">나이 순 정렬 토글 </button>
+	<p>
+		<label for="person_name">Name:</label>
+		<input id="person_name" type="search" data-ng-model="search.name">
+	</p>
+	<p>
+		<label for="person_age">Age:</label>
+		<input id="person_age" type="search" data-ng-model="search.age">
+	</p>
+	<pre>
+	{{ search | json }}
+	</pre>
+
+	<table class="people-list">
+		<!-- 시작: people.length 개수만큼 반복하여 <li>템플릿 완성 -->
+		<!-- orderBy, IimitTo, fiter 필터  -->
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>나이</th>
+				<th>이메일</th>
+				<th>생년월일</th>
+				<th>연봉</th>
+				<th>사진</th>
+			</tr>
+		</thead>
+		<tbody data-ng-repeat = "person in people | filter: search | limitTo: limit_count | orderBy: 'age': order_reverse"><!-- order_reverse: 변수처리 -->
+		<tr >
+			<!-- uppercase 필터 -->
+				<td data-ng-bind="person.name | uppercase"></td>
+				<td data-ng-bind="person.age"></td>
+			<!-- lowercase 필터 -->
+				<td data-ng-bind="person.mail" | lowercase"></td>
+			<!-- data 필터 -->
+			<td data-ng-bind="person.birthday | date: 'yyyy년 MM월 dd일'"></td>
+			<!-- angular 필터 (|) -->
+			<!-- Currency:Symbol:FrectionSize -->
+			<td>{{ person['has-money'] | number:0 }}원</div>
+			<td>
+			<!-- ngSrc: Lazy Loading (게으른 로딩) -->
+				<img data-ng-src="{{ person.picture.src }}"
+					alt = "{{  person.name }}"
+					width = "{{ person.picture.width }}"
+					height=" {{ person.picture.height }}">
+			</td>
+			</tr>
+		</tbody>
+</table>
+</body>
+</html>
