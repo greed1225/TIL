@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular JS v 1.5.8</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src=""></script>
+</head>
+<body>
+	<div class="fds-mambers" data-ng-controller="fdsMemberListController as fdsCtrl"></div>
+	<ul>
+		<li data-ng-repeat="(key, value) in fdsCtrl.members">
+			<div class="member-index">{{ index }}</div>
+		</li>
+	</ul>
+	<ul>
+		<li>{{ mamber.name }}</li>
+		<li>{{ mamber.regiment }}</li>
+		<li>{{ mamber.devi_fruit }}</li>
+		<li>{{ mamber.position }}</li>
+		<li>{{ mamber.wanted }}</li>
+	</ul>
+</body>
+</html>
